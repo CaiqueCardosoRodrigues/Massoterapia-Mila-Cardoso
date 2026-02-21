@@ -135,6 +135,15 @@ p {
         flex-direction: row;
     }
 
+    /* 👇 AQUI */
+    nav li {
+        border-right: 2px solid white;
+    }
+
+    nav li:last-child {
+        border-right: none;
+    }
+
     .rodape_layout {
         flex-direction: row;
     }
@@ -150,22 +159,40 @@ p {
         text-align: center;
     }
 
-    .bloco img {
-        max-width: 100%;
-    }
+ .bloco img {
+     flex: none;
+    width: 100%;
+    max-width: 200px;
+}
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+ nav ul {
+        flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-    .rodape_layout {
-        flex-direction: column;
-        text-align: center;
-    }
+.rodape_layout {
+     flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav li,
+.tiktok,
+.instagram,
+.telefone {
+    padding: 10px;
+}
+
+.bloco {
+    gap: 20px;
+}
 }
 
 
 * {
     box-sizing: border-box;
+}
+nav a {
+    text-decoration: none;
 }
