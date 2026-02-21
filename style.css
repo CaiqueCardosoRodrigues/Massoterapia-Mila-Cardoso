@@ -1,10 +1,9 @@
 #grid {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
+    grid-template-rows: auto auto 1fr auto;
 }
-
 .cabecalho {
     background-color: rgb(78, 94, 44);
     grid-column: 1 / -1;
@@ -86,13 +85,10 @@ nav ul {
 
 .bloco {
     display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.bloco img {
-    width: 300px;
+    align-items: flex-start; /* mantém topo alinhado */
+    gap: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* ESSENCIAL para quebrar corretamente */
 }
 
 .bloco_reverso {
@@ -101,4 +97,49 @@ nav ul {
 
 p {
     font-size: x-large;
+}
+
+.bloco img {
+    flex: 0 1 380px;   /* controla crescimento */
+    max-width: 380px;  /* trava tamanho máximo */
+    width: 100%;
+    height: auto;
+}
+.bloco div {
+    flex: 2 1 500px;
+}
+
+@media (max-width: 900px) {
+    #grid {
+        grid-template-columns: 1fr;
+    }
+
+    .informacao {
+        grid-column: 1 / -1;
+    }
+
+    .bloco,
+    .bloco_reverso {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .bloco img {
+        max-width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .rodape_layout {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+* {
+    box-sizing: border-box;
 }
