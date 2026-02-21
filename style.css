@@ -1,8 +1,7 @@
 #grid {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
-    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
 }
 .cabecalho {
     background-color: rgb(78, 94, 44);
@@ -19,9 +18,8 @@
 
 .informacao {
     grid-column: 1 / -1;
-    padding: 10px;
+    padding: 20px;
 }
-
 .rodape_layout {
     font-size: 15px;
     font-weight: bold;
@@ -85,7 +83,7 @@ nav ul {
 
 .bloco {
     display: flex;
-    align-items: flex-start; /* mantém topo alinhado */
+   align-items: center;
     gap: 40px;
     margin-bottom: 60px;
     flex-wrap: wrap; /* ESSENCIAL para quebrar corretamente */
@@ -96,12 +94,12 @@ nav ul {
 }
 
 p {
-    font-size: x-large;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
-
 .bloco img {
     flex: 0 1 380px;   /* controla crescimento */
-    max-width: 380px;  /* trava tamanho máximo */
+    max-width: 360px;  /* trava tamanho máximo */
     width: 100%;
     height: auto;
 }
@@ -109,15 +107,42 @@ p {
     flex: 2 1 500px;
 }
 
-@media (max-width: 900px) {
+/* ===== DESKTOP ===== */
+/* ===== DESKTOP ===== */
+@media (min-width: 1000px) {
+
     #grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 0.5fr minmax(0, 1400px) 0.5fr;
     }
 
     .informacao {
-        grid-column: 1 / -1;
+        grid-column: 2;
+        width: 100%;
+        padding: 40px 20px;
     }
 
+    .bloco {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .bloco_reverso {
+        flex-direction: row-reverse;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    .rodape_layout {
+        flex-direction: row;
+    }
+}
+
+
+/* ===== CELULAR ===== */
+@media (max-width: 999px) {
     .bloco,
     .bloco_reverso {
         flex-direction: column;
@@ -139,6 +164,7 @@ p {
         text-align: center;
     }
 }
+
 
 * {
     box-sizing: border-box;
