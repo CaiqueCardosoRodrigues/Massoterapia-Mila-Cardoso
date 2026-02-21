@@ -20,21 +20,6 @@
     grid-column: 1 / -1;
     padding: 20px;
 }
-.rodape_layout {
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-    font-weight: bold;
-    background-color: rgb(72, 72, 156);
-}
-
-.rodape_layout > div {
-    border-right: 2px solid white;
-}
-
-.rodape_layout > div:last-child {
-    border-right: none;
-}
 
 .dye {
     background-color: pink;
@@ -54,12 +39,39 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px;
     color: aqua;
+    min-width: 100px;
 }
 
 footer {
     grid-column: 1 / -1;
+    border-top: 3px solid white;
+}
+
+.rodape_layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgb(72, 72, 156);
+}
+
+.rodape_layout div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape_layout > div {
+    border-right: 2px solid white;
+    padding: 0 25px;
+}
+
+.rodape_layout > div:last-child {
+    border-right: none;
 }
 
 .link:hover {
@@ -153,16 +165,8 @@ p {
         border-right: none;
     }
 
- .rodape_layout {
-    display: flex;
-    flex-direction: row;
-}
 
-.rodape_layout > div:last-child {
-    border-right: none;
 }
-}
-
 
 /* ===== CELULAR ===== */
 @media (max-width: 999px) {
@@ -186,8 +190,9 @@ p {
 }
 
 .rodape_layout {
- flex-direction: row;
-}
+ justify-content: space-evenly;
+        gap: 0;
+    }
 
 nav li,
 .tiktok,
@@ -199,10 +204,6 @@ nav li,
 .bloco {
     gap: 20px;
 }
-
-.rodape_layout > div:last-child {
-    border-right: none;
-}
 }
 
 
@@ -211,12 +212,4 @@ nav li,
 }
 nav a {
     text-decoration: none;
-}
-
-nav li {
-    border-right: 2px solid white;
-}
-
-nav li:last-child {
-    border-right: none;
 }
