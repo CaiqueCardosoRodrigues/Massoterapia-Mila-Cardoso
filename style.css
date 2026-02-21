@@ -144,9 +144,10 @@ p {
         border-right: none;
     }
 
-    .rodape_layout {
-        flex-direction: row;
-    }
+ .rodape_layout {
+    display: flex;
+    flex-direction: row;
+}
 
 .rodape_layout > div {
     border-right: 2px solid white;
@@ -180,10 +181,7 @@ p {
 }
 
 .rodape_layout {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
+ flex-direction: column;
 }
 
 nav li,
@@ -210,3 +208,10 @@ nav a {
     text-decoration: none;
 }
 
+nav li {
+    border-right: 2px solid white;
+}
+
+nav li:last-child {
+    border-right: none;
+}
